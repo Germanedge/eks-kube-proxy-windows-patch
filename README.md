@@ -11,7 +11,7 @@ contains a script to patch the calico installer
     - '& c:\eks-calico-patch.ps1' ```
 
 
-Check services:
+#Check services:
 ``` Get-CimInstance win32_service -filter 'Name="kube-proxy"' | Format-List -Property *
 Get-CimInstance win32_service -filter 'Name="kube-proxy"' | Invoke-CimMethod -Name Change -Argument @{ PathName = $UpdatedPath }
 restart-Service -name "kube-proxy" ```
