@@ -1,7 +1,7 @@
-# eks-kube-proxy-windows-patch
+> eks-kube-proxy-windows-patch
 contains a script to patch the calico installer
 
-Add this to your eks-node boostrapping script like this:
+# Add this to your eks-node boostrapping script like this:
     preBootstrapCommands:
     - '& mkdir c:\k'
     - '& Invoke-WebRequest https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.5/2022-01-21/bin/windows/amd64/kubectl.exe -OutFile c:\k\kubectl.exe'
