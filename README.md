@@ -13,6 +13,8 @@ contains a script to patch the calico installer
 
 
 Check services:
-> Get-CimInstance win32_service -filter 'Name="kube-proxy"' | Format-List -Property *
-> Get-CimInstance win32_service -filter 'Name="kube-proxy"' | Invoke-CimMethod -Name Change -Argument @{ PathName = $UpdatedPath }
-> restart-Service -name "kube-proxy"
+```
+Get-CimInstance win32_service -filter 'Name="kube-proxy"' | Format-List -Property *
+Get-CimInstance win32_service -filter 'Name="kube-proxy"' | Invoke-CimMethod -Name Change -Argument @{ PathName = $UpdatedPath }
+restart-Service -name "kube-proxy"
+```
