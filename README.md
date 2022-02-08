@@ -3,6 +3,7 @@ contains a script to patch the calico installer
 
 Reason for doing this patch:
 The calico intaller will error out on the current windowsserver20h2corecontainer AMI while changing the start parameter of the windows service because on the current version the parameter of Invoke-CimMethod does not support -ArgumentList.
+The proper way of doing this would be to create a launch template on top of a custom AMI which I do not want to maintain.
 
  Add this to your eks-node boostrapping script like this:
 ```  preBootstrapCommands:
