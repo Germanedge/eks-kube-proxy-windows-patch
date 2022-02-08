@@ -12,9 +12,9 @@ The proper way of doing this would be to create a launch template on top of a cu
     - '& Set-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" -Name PATH -Value "$ENV:PATH ;C:\k"'
     - '& Invoke-WebRequest https://docs.projectcalico.org/scripts/install-calico-windows.ps1 -OutFile c:\install-calico-windows.ps1'
     - '& Invoke-WebRequest https://github.com/Germanedge/eks-kube-proxy-windows-patch/blob/0.0.3/eks-calico-patch.ps1 -Outfile c:\eks-calico-patch.ps1'
-    - '& c:\eks-calico-patch.ps1'
-    - '& c:\install-calico-windows.ps1'
+    - '& c:\bootstrap-hook.ps1'
  ```
+The hook executes the the patch after the normal bootstrapping is done.
 
 
 Check/debug services:
