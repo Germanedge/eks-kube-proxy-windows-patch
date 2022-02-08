@@ -1,6 +1,9 @@
 # eks-kube-proxy-windows-patch
 contains a script to patch the calico installer
 
+Reason for doing this patch:
+The calico intaller will error out on the current windowsserver20h2corecontainer AMI while changing the start parameter of the windows service because on the current version the parameter of Invoke-CimMethod does not support -ArgumentList.
+
  Add this to your eks-node boostrapping script like this:
 ```  preBootstrapCommands:
     - '& mkdir c:\k'
