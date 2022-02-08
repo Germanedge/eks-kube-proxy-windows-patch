@@ -11,7 +11,8 @@ The proper way of doing this would be to create a launch template on top of a cu
     - '& Invoke-WebRequest https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.5/2022-01-21/bin/windows/amd64/kubectl.exe -OutFile c:\k\kubectl.exe'
     - '& Set-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" -Name PATH -Value "$ENV:PATH ;C:\k"'
     - '& Invoke-WebRequest https://docs.projectcalico.org/scripts/install-calico-windows.ps1 -OutFile c:\install-calico-windows.ps1'
-    - '& Invoke-WebRequest https://github.com/Germanedge/eks-kube-proxy-windows-patch/blob/0.0.3/eks-calico-patch.ps1 -Outfile c:\eks-calico-patch.ps1'
+    - '& Invoke-WebRequest https://raw.githubusercontent.com/Germanedge/eks-kube-proxy-windows-patch/0.0.5/eks-calico-patch.ps1 -Outfile c:\eks-calico-patch.ps1'
+    - '& Invoke-WebRequest https://raw.githubusercontent.com/Germanedge/eks-kube-proxy-windows-patch/0.0.5/bootstrap-hook.ps1 -Outfile c:\bootstrap-hook.ps1'
     - '& c:\bootstrap-hook.ps1'
  ```
 The hook executes the the patch after the normal bootstrapping is done.
