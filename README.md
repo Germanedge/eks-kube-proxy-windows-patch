@@ -12,6 +12,7 @@ The calico intaller will error out on the current windowsserver20h2corecontainer
     - '& Invoke-WebRequest https://docs.projectcalico.org/scripts/install-calico-windows.ps1 -OutFile c:\install-calico-windows.ps1'
     - '& Invoke-WebRequest https://github.com/Germanedge/eks-kube-proxy-windows-patch/blob/0.0.3/eks-calico-patch.ps1 -Outfile c:\eks-calico-patch.ps1'
     - '& c:\eks-calico-patch.ps1'
+    - '& c:\install-calico-windows.ps1'
  ```
 
 
