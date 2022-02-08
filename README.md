@@ -15,7 +15,7 @@ The proper way of doing this would be to create a launch template on top of a cu
     - '& Invoke-WebRequest https://raw.githubusercontent.com/Germanedge/eks-kube-proxy-windows-patch/0.0.5/bootstrap-hook.ps1 -Outfile c:\bootstrap-hook.ps1'
     - '& c:\bootstrap-hook.ps1'
  ```
-The hook executes the the patch after the normal bootstrapping is done.
+The hook executes the patch after the normal bootstrapping is done. The patch will patch the official calico install script and execute it.
 
 
 Check/debug services:
